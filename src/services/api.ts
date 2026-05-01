@@ -1,4 +1,5 @@
-const BASE_URL = 'http://localhost:8000/api'
+// const BASE_URL = 'http://localhost:8000/api'
+const BASE_URL = 'https://musicexplorerapi.scarletwingscreative.com/api'
 
 export const searchTracks = async (query: string) => {
   const response = await fetch(`${BASE_URL}/search?q=${encodeURIComponent(query)}`)
