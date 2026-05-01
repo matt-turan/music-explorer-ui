@@ -77,11 +77,19 @@
   flex: 1;
   padding: 0.5rem;
   font-size: 1rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
 }
 
 .search-bar button {
   padding: 0.5rem 1rem;
   cursor: pointer;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
 }
 
 .results {
@@ -95,7 +103,9 @@
   gap: 1rem;
   align-items: center;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-secondary);
 }
 
 .track-card img {
@@ -107,11 +117,22 @@
 .track-title {
   font-weight: bold;
   margin: 0;
+  color: var(--text-primary);
 }
 
-.track-artist, .track-album {
+.track-artist {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.track-artist:hover {
+  text-decoration: underline;
+}
+
+.track-album {
   margin: 0;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 </style>

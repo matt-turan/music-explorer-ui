@@ -16,7 +16,7 @@ onMounted(async () => {
 
 <template>
   <div class="album-view">
-    <button @click="$router.back()">← Back</button>
+    <button @click="$router.back()" class="btn">← Back</button>
 
     <div v-if="loading">Loading...</div>
 
@@ -42,46 +42,63 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.album-view {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+  .album-view {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
 
-.album-header {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  margin: 1.5rem 0;
-}
+  .album-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
 
-.album-header img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
+  .album-header img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
 
-.track-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
+  .album-header h1 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
 
-.track-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.5rem;
-  border-bottom: 1px solid #eee;
-}
+  .album-header p {
+    color: var(--text-secondary);
+  }
 
-.track-title {
-  flex: 1;
-}
+  h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
 
-.track-duration {
-  font-size: 0.9rem;
-  color: #666;
-  min-width: 40px;
-}
+  .track-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .track-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+  }
+
+  .track-title {
+    flex: 1;
+    color: var(--text-primary);
+  }
+
+  .track-duration {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    min-width: 40px;
+  }
 </style>

@@ -11,10 +11,6 @@ const albums = ref<any[]>([])
 const loading = ref(true)
 const error = ref<string | null>(null)
 
-const handleBack = () => {
-  router.back();
-}
-
 // Fetch artist details and albums on component mount
 // Similar to React useEffect with empty dependency array
 
@@ -38,9 +34,8 @@ onMounted(async () => {
 
 <template>
   <div class="artist-view">
+    <button @click="$router.back()" class="btn">← Back</button>
 
-    <!-- <button @click="$router.back()">← Back</button> -->
-    <button @click=handleBack()>← Back</button>
     <div v-if="loading">Loading...</div>
 
     <div v-if="error">{{ error }}</div>
@@ -72,52 +67,72 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.artist-view {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+  .artist-view {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
 
-.artist-header {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  margin-bottom: 2rem;
-}
+  .artist-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
 
-.artist-header img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+  .artist-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 
-.albums-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1.5rem;
-}
+  .artist-header h1 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
 
-.album-card {
-  text-decoration: none;
-  color: inherit;
-}
+  .artist-header p {
+    color: var(--text-secondary);
+  }
 
-.album-card img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-}
+  h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
 
-.album-title {
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin: 0.5rem 0 0.25rem;
-}
+  .albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
 
-.album-date {
-  font-size: 0.8rem;
-  color: #666;
-  margin: 0;
-}
+  .album-card {
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--bg-secondary);
+    border-radius: 4px;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+  }
+
+  .album-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  .album-title {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0.25rem;
+    color: var(--text-primary);
+  }
+
+  .album-date {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+  }
 </style>
