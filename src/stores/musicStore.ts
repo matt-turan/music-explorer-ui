@@ -21,5 +21,10 @@ export const useMusicStore = defineStore('music', () => {
     }
   }
 
-  return { tracks, loading, error, search }
+  const clearResults = () => {
+    tracks.value = []
+    error.value = null
+  }
+
+  return { tracks, loading, error, search, clearResults }
 })
