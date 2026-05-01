@@ -1,5 +1,4 @@
-// const BASE_URL = 'http://localhost:8000/api'
-const BASE_URL = 'https://musicexplorerapi.scarletwingscreative.com/api'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 export const searchTracks = async (query: string) => {
   const response = await fetch(`${BASE_URL}/search?q=${encodeURIComponent(query)}`)
