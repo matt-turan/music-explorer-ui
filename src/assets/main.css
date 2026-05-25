@@ -90,7 +90,7 @@ p {
 }
 
 .track-info audio {
-    width: 100%;
+    width: 200px;
     margin-top: 0.2rem;
 }
 
@@ -98,9 +98,23 @@ p {
     width: 40%;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 412px) {
+    .track-info audio {
+        width: 244px;
+    }
+
     .track-list .track-row audio {
-        width: auto;
+        width: 50%;
+    }
+}
+
+@media (min-width: 480px) {
+    .track-info audio {
+        width: 300px;
+    }
+
+    .track-list .track-row audio {
+        width: 300px;
     }
 }
 
