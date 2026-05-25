@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useThemeStore } from './stores/themeStore'
+import Footer from './components/Footer.vue';
 
 const theme = useThemeStore()
 </script>
@@ -12,6 +13,7 @@ const theme = useThemeStore()
     </button>
   </nav>
   <RouterView />
+  <Footer />
 </template>
 
 <style scoped>

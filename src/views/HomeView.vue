@@ -15,6 +15,7 @@
 <template>
   <div class="home">
     <h1>Music Explorer</h1>
+    <p>Using Deezer API via custom built Symfony API</p>
 
     <div class="search-bar">
       <input
